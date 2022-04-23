@@ -11,6 +11,9 @@ public class Car {
     private int position = 0;
 
     public Car(String carName){
+        if(isOverFive(carName)){
+            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 초과할 수 없습니다.");
+        }
         this.carName = carName;
     }
 
@@ -22,7 +25,7 @@ public class Car {
      */
     public Car(String carName, int position) {
         if(isOverFive(carName)){
-            throw new IllegalArgumentException("자동차 이름은 5자를 초과할 수 없습니다.");
+            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 초과할 수 없습니다.");
         }
         this.position = position;
         this.carName = carName;
