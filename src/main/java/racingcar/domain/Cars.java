@@ -1,4 +1,4 @@
-package racingcar.model;
+package racingcar.domain;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ public class Cars {
         String[] carNames = carList.split(",");
 
         for (String car : carNames) {
-            cars.add(new Car(car, 3));
+            cars.add(new Car(car));
         }
     }
 
