@@ -38,7 +38,10 @@ public class Cars {
         for (Car car : cars) {
             car.isMove(randomMovingStrategy);
             checkWinnerScore(car);
+            carsStatus.append(car.getCarName() + " : " + car.showCarDistance());
+            carsStatus.append("\n");
         }
+        carsStatus.append("\n");
     }
 
     private void checkWinnerScore(Car car) {
@@ -62,13 +65,5 @@ public class Cars {
         if(car.isWinner(winnerScore)){
             winnerCars.add(car);
         }
-    }
-
-    public void appendCarsStatus(){
-        for (Car car : cars) {
-            carsStatus.append(car.getCarName() + " : " + car.showCarDistance());
-            carsStatus.append("\n");
-        }
-        carsStatus.append("\n");
     }
 }
