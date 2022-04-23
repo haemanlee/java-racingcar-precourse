@@ -20,12 +20,9 @@ public class ResultView {
         final StringBuilder sb = new StringBuilder();
         sb.append("최종 우승자: ");
         List<Car> winners = cars.isWinners();
-        for (int i = 0; i < winners.size(); i++) {
-            if(i == 0){
-                sb.append(winners.get(i).getCarName());
-            } else {
-                sb.append(", " + winners.get(i).getCarName());
-            }
+        sb.append(winners.get(0).getCarName());
+        for (int i = 1; i < winners.size(); i++) {
+            sb.append(", " + winners.get(i).getCarName());
         }
         System.out.println(sb);
     }
