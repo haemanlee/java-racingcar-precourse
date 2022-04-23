@@ -16,6 +16,7 @@ public class Car {
 
     /**
      * 각 자동차에 이름을 부여할 수 있다. 자동차 이름은 5자를 초과할 수 없다.
+     * 사용자는 몇 번의 이동을 할 것인지를 입력할 수 있어야 한다.
      * @param carName
      * @param position
      */
@@ -25,6 +26,10 @@ public class Car {
         }
         this.position = position;
         this.carName = carName;
+    }
+
+    public String getCarName() {
+        return carName;
     }
 
     private boolean isOverFive(String carName) {

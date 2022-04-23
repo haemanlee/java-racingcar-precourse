@@ -46,6 +46,9 @@ class CarTest {
         assertThat(car.getDistance()).isEqualTo(3);
     }
 
+    /**
+     * 사용자는 몇 번의 이동을 할 것인지를 입력할 수 있어야 한다.
+     */
     @Test
     void max_move_test(){
         Car car = new Car("pobi", 3);
