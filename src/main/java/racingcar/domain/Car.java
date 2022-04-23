@@ -14,6 +14,11 @@ public class Car {
         this.carName = carName;
     }
 
+    /**
+     * 각 자동차에 이름을 부여할 수 있다. 자동차 이름은 5자를 초과할 수 없다.
+     * @param carName
+     * @param position
+     */
     public Car(String carName, int position) {
         if(isOverFive(carName)){
             throw new IllegalArgumentException("자동차 이름은 5자를 초과할 수 없습니다.");
