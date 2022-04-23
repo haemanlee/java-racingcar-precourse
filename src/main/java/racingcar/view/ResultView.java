@@ -18,7 +18,7 @@ public class ResultView {
 
     public static void printWinners(Cars cars) {
         final StringBuilder sb = new StringBuilder();
-        sb.append("최종 우승자는 ");
+        sb.append("최종 우승자: ");
         List<Car> winners = cars.isWinners();
         for (int i = 0; i < winners.size(); i++) {
             if(i == 0){
@@ -27,7 +27,6 @@ public class ResultView {
                 sb.append(", " + winners.get(i).getCarName());
             }
         }
-        sb.append(" 입니다.");
         System.out.println(sb);
     }
 

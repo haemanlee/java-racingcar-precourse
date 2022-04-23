@@ -3,6 +3,7 @@ package racingcar.domain;
 import java.util.Objects;
 
 public class Car {
+    private final static String OVER_FIVE_CAR_NAME = "[ERROR] 자동차 이름은 5자를 초과할 수 없습니다.";
     private final static int MAX_CAR_NAME = 5;
 
     private StringBuilder showCarDistance;
@@ -12,7 +13,7 @@ public class Car {
 
     public Car(String carName){
         if(isOverFive(carName)){
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 초과할 수 없습니다.");
+            throw new IllegalArgumentException(OVER_FIVE_CAR_NAME);
         }
         this.carName = carName;
     }
@@ -25,7 +26,7 @@ public class Car {
      */
     public Car(String carName, int position) {
         if(isOverFive(carName)){
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5자를 초과할 수 없습니다.");
+            throw new IllegalArgumentException(OVER_FIVE_CAR_NAME);
         }
         this.position = position;
         this.carName = carName;

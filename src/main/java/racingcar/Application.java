@@ -8,10 +8,25 @@ import racingcar.view.ResultView;
 public class Application {
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-        String carList = InputView.askCars( );
-        Cars cars = new Cars(carList);
-
-        int playCount = InputView.askTryCount();
+        Cars cars;
+        while (true){
+            try {
+                String carList = InputView.askCars();
+                cars = new Cars(carList);
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        int playCount;
+        while (true) {
+            try {
+                playCount = InputView.askTryCount();
+                break;
+            } catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
+            }
+        }
 
         GameService.start(cars, playCount);
 
