@@ -49,12 +49,14 @@ class CarTest {
     /**
      * 사용자는 몇 번의 이동을 할 것인지를 입력할 수 있어야 한다.
      */
+    @DisplayName("최대 이동거리 테스트")
     @Test
     void max_move_test(){
         Car car = new Car("pobi", 3);
         assertThat(car.isWinner(3)).isTrue();
     }
 
+    @DisplayName("우승자 확인 테스트")
     @Test
     void is_winner_test(){
         int maxPosition = 3;

@@ -1,26 +1,27 @@
 package racingcar.controller;
 
 import racingcar.domain.Cars;
+import racingcar.domain.PlayCount;
 import racingcar.view.InputView;
 import racingcar.view.ResultView;
 
 public class Controller {
-    public static void start(Cars cars, int playCount) {
-        int startCount = 0;
+    public static void start(Cars cars, PlayCount playCount) {
+        int index = 0;
 
         ResultView.printStartResult();
-        while ( startCount != playCount ) {
+        while ( !playCount.isLast(index) ) {
             cars.play();
-            startCount++;
+            index++;
         }
         ResultView.printCars(cars);
     }
 
-    public static int makePlayCount() {
-        int playCount;
+    public static PlayCount makePlayCount() {
+        PlayCount playCount;
         while (true) {
             try {
-                playCount = InputView.askTryCount();
+                playCount = new PlayCount(InputView.askTryCount());
                 break;
             } catch (IllegalArgumentException e){
                 System.out.println(e.getMessage());

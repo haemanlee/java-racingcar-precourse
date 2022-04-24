@@ -5,24 +5,13 @@ import camp.nextstep.edu.missionutils.Console;
 import java.util.regex.Pattern;
 
 public class InputView {
-    private static Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
 
-    public static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        return pattern.matcher(strNum).matches();
-    }
 
     private InputView() {}
 
-    public static int askTryCount() {
+    public static String askTryCount() {
         System.out.println("시도할 회수는 몇회인가요?");
-        String input = Console.readLine();
-        if(!isNumeric(input)){
-            throw new IllegalArgumentException("[ERROR] 시도 횟수는 숫자여야 한다.");
-        }
-        return Integer.parseInt(input);
+        return Console.readLine();
     }
 
     public static String askCars() {
